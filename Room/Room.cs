@@ -9,7 +9,6 @@ public class Room
     public string Status { get; set; }
     public string Details { get; set; }
 
-    // Propiedad calculada para el total a pagar
     public decimal TotalPayment => PricePerNight * Days;
 
     public Room(int number, string type, decimal pricePerNight, int days, string status, string details)
