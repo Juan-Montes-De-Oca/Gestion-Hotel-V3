@@ -56,14 +56,14 @@ class Program
                         break;
                     }
 
-                    // Selecciona el tipo de habitación y obtiene su precio estándar automáticamente
+                    
                     var selectedRoomInfo = RoomService.ChooseRoomTypeWithStandardPrice();
                     string roomType = selectedRoomInfo.TypeName;
                     decimal pricePerNight = selectedRoomInfo.PricePerNight;
 
                     Console.WriteLine($"-> Precio estándar asignado: ${pricePerNight:F2} por noche.");
 
-                    // Pide la cantidad de días de estancia
+                    
                     int days;
                     while (true)
                     {
@@ -81,7 +81,7 @@ class Program
                     string details = (Console.ReadLine() ?? "").Trim();
                     if (string.IsNullOrWhiteSpace(details)) details = "Estándar";
 
-                    // Crea el objeto Room calculando el total automáticamente
+                    
                     Room newRoom = new Room(roomNum, roomType, pricePerNight, days, roomStatusVal, details);
 
                     Console.WriteLine($"\n[Cálculo] Total a pagar por {days} día(s): ${newRoom.TotalPayment:F2}");
